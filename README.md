@@ -24,10 +24,10 @@ python get_control_regions.py --help
 --------Get Control Regions For CoRSIV Regions--------
 
 positional arguments:
-  Annotation_File       Path to annotation file (CSV) for a given chromosome.
+  Annotation_File       Path to annotation file (CSV) for a given chromosome. Columns of annotation file should be Bin Name,CpG Count, ... and should be in 1-based coordinates. Values in the column 'Bin Name' should be in 'chrX_<ENDING_COORDINATE_OF_BIN>' format. (ex: chr21_4300)
   Annotation_File_Bin_Size
                         Bin Size of the annotation file provided. ( ex: 100, 200)
-  CoRSIV_File           Path to CoRSIV file (CSV) for a given chromosome. Columns of CoRSIV file should be file chr, start, end, cpg_count, id, ... and should be in 1-based coordinates
+  CoRSIV_File           Path to CoRSIV file (CSV) for a given chromosome. Columns of CoRSIV file should be chr, start, end, cpg_count, id, ... and should be in 1-based coordinates
   Chromosome            Chromosome in the format chrx.
   Output_File           Path of the output file containing control regions.
 
