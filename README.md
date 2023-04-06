@@ -61,6 +61,20 @@ python get_control_regions.py 100bp_annotations/chr21_annotated.csv 100 corsiv_r
 python get_control_regions.py -g -f every_known_gene.bed 100bp_annotations/chr21_annotated.csv 100 corsiv_regions.csv  chr21 chrom_21_control_regions.csv
 ```
 
+## Output 
+
+#### Output will be a CSV file with the given name (and path). Please refer to following sample output file.
+
+| CoRSIV ID | Start Coord | End Coord | Exact Match? |
+| ------ | ------ |------ |------ |
+| 21_661 | 26172701 | 26172900 | 1 |
+| 21_790 | 21065501 | 21065700 | 1 |
+| 21_2085 | 6451801 | 6452600| 0 |
+
+## Note : 
+
+#### If the value in the column "Exact Match?" is 1, that means control region was matched strictly to the exact criteria, while if it's 0, that means that control region was matched under relaxed criteria.
+
 ## License
 
 MIT
