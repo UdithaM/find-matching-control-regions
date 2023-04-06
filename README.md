@@ -56,7 +56,7 @@ chr21_4300
 python get_control_regions.py 100bp_annotations/chr21_annotated.csv 100 corsiv_regions.csv chr21 chrom_21_control_regions.csv
 ```
 
-### 4)  Use the following "sample" command to run the Python script to get control regions with genic option (Optional).
+### 5)  Use the following "sample" command to run the Python script to get control regions with genic option (Optional).
 ```sh
 python get_control_regions.py -g -f every_known_gene.bed 100bp_annotations/chr21_annotated.csv 100 corsiv_regions.csv  chr21 chrom_21_control_regions.csv
 ```
