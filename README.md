@@ -33,7 +33,7 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  -g, --genic           Whether genic control regions are needed. Make sure that gene file is provided with if this is set to True. Use -f or --gene_file to provide gene file. (default: False)
+  -g, --genic           Whether genic control regions are needed. Make sure that gene file is provided with if -g is used in your command. Use -f or --gene_file to provide gene file. (default: False)
   -f GENE_FILE, --gene_file GENE_FILE
                         Path to file containing genes in whole genome in BED format. Columns of gene file should be file chr, start, end, ... and should be in 1-based coordinates. Column headers should not be in the bed file.
 ```
