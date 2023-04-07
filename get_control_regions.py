@@ -31,14 +31,6 @@ chromosome = config['Chromosome']
 genic = config['genic']
 gene_filename = config['gene_file']
 
-# # parameters
-# annotation_filename = "../../Annotations/chr21_annotated.csv"
-# corsiv_filename = 'NEW_DATASET/corsiv_regions_that_has_missing_genic_control.csv'
-# output_filename = 'NEW_DATASET/chrom_21_controls_new.csv'
-# # get chromosome in the type 'chr4'
-# chromosome = 'chr21'
-# genic = 'genic'
-
 def find_match(cpg, size, bin_dict):
     """
     Finds a control region in the input list with the input size.
