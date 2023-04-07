@@ -104,7 +104,7 @@ def find_match(cpg, size, bin_dict):
 
 
 # reads in the annotation file with columns "Bin Name" and "CpG Count"
-annotation = pd.read_csv(annotation_filename, index_col=0)
+annotation = pd.read_csv(annotation_filename)
 
 # this dictionary stores the number of cpg in the 100bp bin as value and uses the start coord of the bin as key
 bin_cpg_num = {}
