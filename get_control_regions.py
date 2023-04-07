@@ -3,7 +3,7 @@ import random
 import sys
 import os
 import time
-from pandas.io.common import EmptyDataError
+# from pandas.io.common import EmptyDataError
 import argparse
  
 parser = argparse.ArgumentParser(description="--------Get Control Regions For CoRSIV Regions--------",
@@ -96,7 +96,7 @@ def find_match(cpg, size, bin_dict):
                     gene_overlap_df = pd.read_csv(gene_overlap_file_name, header=None, sep="\t")
                     done = True
                     return coord, coord + size - 1
-                except EmptyDataError:
+                except pandas.errors.EmptyDataError:
                     continue
             elif (cpg_num == cpg and (not flag) and (not genic)):
                     done = True
