@@ -88,7 +88,7 @@ def find_match(cpg, size, bin_dict):
                     gene_overlap_df = pd.read_csv(gene_overlap_file_name, header=None, sep="\t")
                     done = True
                     return coord, coord + size - 1
-                except pandas.errors.EmptyDataError:
+                except pd.errors.EmptyDataError:
                     continue
             elif (cpg_num == cpg and (not flag) and (not genic)):
                     done = True
