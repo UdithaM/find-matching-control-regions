@@ -6,8 +6,8 @@
 
 ## Steps to use
 
-#### 1)  Clone this Github repository to your Linux computer/Server.
-#### 2) Go into the folder.
+### 1)  Clone this Github repository to your Linux computer/Server.
+### 2) Go into the folder.
 
 ```sh
 cd find-matching-control-regions
