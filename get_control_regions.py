@@ -71,12 +71,12 @@ def find_match(cpg, size, bin_dict):
                 data = {'chr': [chromosome],'start': [coord - 3000],'end': [end_coordinate + 3000]}
                 # Create a dataFrame for bedtools intersect including control region
                 temp_df = pd.DataFrame(data)
-                genic_folder = '%s_genic'  % chromosome
+                control_folder = '%s_controls_temp'  % chromosome
                 # Create a folder for bedtools
-                os.system('mkdir -p %s' % genic_folder)
+                os.system('mkdir -p %s' % control_folder)
                 time.sleep(2)
-                control_region_file_name = '%s/control_region_for_%s_%s_%s.bed' % (genic_folder,chromosome, coord, end_coordinate)
-                gene_overlap_file_name = '%s/control_region_for_%s_%s_%s_gene_overlap.bed' % (genic_folder,chromosome, coord, end_coordinate)
+                control_region_file_name = '%s/control_region_for_%s_%s_%s.bed' % (control_folder,chromosome, coord, end_coordinate)
+                gene_overlap_file_name = '%s/control_region_for_%s_%s_%s_gene_overlap.bed' % (control_folder,chromosome, coord, end_coordinate)
                 temp_df.to_csv(control_region_file_name , sep='\t', header=False, index=False)
                 time.sleep(3)
                 # Check for overlaps with genes within 3kb upstream and downstream
