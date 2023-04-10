@@ -184,5 +184,5 @@ for block in corsiv_cpg_num:
 output = pd.DataFrame({"CoRSIV ID":block_id,"Start Coord":start_coord,"End Coord":end_coord,"Exact Match?":exact_match})
 output.to_csv(output_filename, header = True, index=0)
 failed_output = pd.DataFrame({"Failed CoRSIV ID":failed_block_id})
-failed_output.to_csv("Failed_CoRSIVs_%s" % chromosome, header = True)
+failed_output.to_csv("Failed_CoRSIVs_%s.csv" % chromosome, header = True)
 
