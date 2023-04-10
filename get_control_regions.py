@@ -138,6 +138,8 @@ start_coord = []
 end_coord = []
 exact_match = []
 
+failed_block_id = []
+
 for block in corsiv_cpg_num:
     # attempt 1-400, match = 1 means an exact match and match = 0 means an approximate
     match = 1
@@ -150,12 +152,37 @@ for block in corsiv_cpg_num:
     if not result:
         result = find_match(block[2], block[1]-block[0]+201, bin_cpg_num)
         match = 0
+    if not result:
+        result = find_match(block[2], block[1]-block[0], bin_cpg_num -1)
+        match = 0
+    if not result:
+        result = find_match(block[2], block[1]-block[0], bin_cpg_num +1)
+        match = 0
+    if not result:
+        result = find_match(block[2], block[1]-block[0] + 101, bin_cpg_num +1)
+        match = 0
+    if not result:
+        result = find_match(block[2], block[1]-block[0] + 201, bin_cpg_num +1)
+        match = 0
+    if not result:
+        result = find_match(block[2], block[1]-block[0], bin_cpg_num -2)
+        match = 0
+    if not result:
+        result = find_match(block[2], block[1]-block[0], bin_cpg_num +2)
+        match = 0
+
     print(result)
-    block_id.append(block[3])
-    start_coord.append(result[0])
-    end_coord.append(result[1])
-    exact_match.append(match)
+    try:
+        start_coord.append(result[0])
+        block_id.append(block[3])
+        end_coord.append(result[1])
+        exact_match.append(match)
+    except TypeError:
+        failed_block_id.append(block[3])
+        print("Failed to find a matching control region for CoRSIV with id %s !" % (block[3]))
 # outputs the dataframe
 output = pd.DataFrame({"CoRSIV ID":block_id,"Start Coord":start_coord,"End Coord":end_coord,"Exact Match?":exact_match})
 output.to_csv(output_filename, header = True, index=0)
+failed_output = pd.DataFrame({"Failed CoRSIV ID":failed_block_id})
+failed_output.to_csv("Failed_CoRSIVs_%s" % chromosome, header = True)
 
