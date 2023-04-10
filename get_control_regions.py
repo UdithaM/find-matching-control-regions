@@ -153,22 +153,22 @@ for block in corsiv_cpg_num:
         result = find_match(block[2], block[1]-block[0]+201, bin_cpg_num)
         match = 0
     if not result:
-        result = find_match(block[2], block[1]-block[0], bin_cpg_num -1)
+        result = find_match(block[2] -1, block[1]-block[0], bin_cpg_num )
         match = 0
     if not result:
-        result = find_match(block[2], block[1]-block[0], bin_cpg_num +1)
+        result = find_match(block[2] +1, block[1]-block[0], bin_cpg_num)
         match = 0
     if not result:
-        result = find_match(block[2], block[1]-block[0] + 101, bin_cpg_num +1)
+        result = find_match(block[2] +1, block[1]-block[0] + 101, bin_cpg_num)
         match = 0
     if not result:
-        result = find_match(block[2], block[1]-block[0] + 201, bin_cpg_num +1)
+        result = find_match(block[2] +1, block[1]-block[0] + 201, bin_cpg_num )
         match = 0
     if not result:
-        result = find_match(block[2], block[1]-block[0], bin_cpg_num -2)
+        result = find_match(block[2] -2, block[1]-block[0], bin_cpg_num )
         match = 0
     if not result:
-        result = find_match(block[2], block[1]-block[0], bin_cpg_num +2)
+        result = find_match(block[2] +2, block[1]-block[0], bin_cpg_num )
         match = 0
 
     print(result)
